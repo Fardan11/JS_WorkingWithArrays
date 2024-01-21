@@ -74,3 +74,21 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+/* Arrays are objects and they have their own methods, basically there are functions attached */
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(arr.slice(2)); // 2 to last
+console.log(arr.slice(2, 4)); // last parameter not included
+console.log(arr.slice(-2)); // last elements but left to right still
+console.log(arr.slice(-1));
+console.log(arr.slice(1, -1)); //last one not inclusive
+console.log(arr.slice()); // shallow copy
+
+//SPLICE (mutates the Original Array)
+
+// console.log(arr.splice(2)); //from this to last index spliced
+
+console.log(arr.splice(-1));
+console.log(arr);
