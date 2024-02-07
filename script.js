@@ -61,6 +61,25 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovement = function (movements) {
+  containerMovements.innerHTML = ''; //empty first
+
+  movements.forEach(function (mov, i) {
+    //for value and index
+    const type = mov > 0 ? 'deposit' : 'withdraw';
+    const html = `
+      <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+          <div class="movements__date">3 days ago</div>
+          <div class="movements__value">${mov}</div>
+      </div>`;
+    containerMovements.insertAdjacentHTML('afterbegin', html); //order
+  });
+};
+
+displayMovement(account1.movements);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -144,3 +163,5 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, _, map) {
   console.log(`${value}: ${value}`);
 });
+
+//Coding Challenge
